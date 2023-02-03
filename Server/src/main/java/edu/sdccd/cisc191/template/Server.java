@@ -41,12 +41,13 @@ public class Server {
     }
 
     public static void main(String[] args) {
-        Server server = new Server();
-        try {
-            server.start(4444);
-            server.stop();
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
+        System.out.println("Hello World!");
+//        Server server = new Server();
+//        try {
+//            server.start(4444);
+//            server.stop();
+//        } catch(Exception e) {
+//            e.printStackTrace();
+//        }
     }
 } //end class Server
