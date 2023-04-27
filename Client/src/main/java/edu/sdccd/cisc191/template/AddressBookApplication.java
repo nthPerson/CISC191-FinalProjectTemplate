@@ -55,14 +55,28 @@ public class AddressBookApplication {
                     System.out.println("Contact added successfully!" + "\n" + "********************************" + "\n");
                     break;
 
+//                case 2:  // remove an existing contact
+//                    System.out.println("Enter name, phone number, or email address of the contact you wish to remove: ");
+//                    String contactToRemove = reader.readLine();
+//                    if (addressBook.removeContact(contactToRemove)) {
+//                        System.out.println("Contact removed successfully!");
+//                    } else {
+//                        System.out.println("Contact was not found." + "\n" + "********************************" + "\n");
+//                    }
+//                    break;
                 case 2:  // remove an existing contact
-                    System.out.println("Enter name, phone number, or email address of the contact you wish to remove: ");
-                    String contactToRemove = reader.readLine();
+                    if (!addressBook.displayContacts()) {
+                        System.out.println("There is no contact in address book for you to remove.");
+                    }
+                    else {
+                        System.out.println("Enter name, phone number, or email address of the contact you wish to remove: ");
+                        String contactToRemove = reader.readLine();
 
-                    if (addressBook.removeContact(contactToRemove)) {
-                        System.out.println("Contact removed successfully!");
-                    } else {
-                        System.out.println("Contact was not found." + "\n" + "********************************" + "\n");
+                        if (addressBook.removeContact(contactToRemove)) {
+                            System.out.println("Contact removed successfully!");
+                        } else {
+                            System.out.println("Contact was not found." + "\n" + "********************************" + "\n");
+                        }
                     }
                     break;
 
@@ -137,5 +151,13 @@ public class AddressBookApplication {
                     System.out.println("Invalid choice, returning to main menu...");
             }
         }
+    }
+
+    public static void optionBoard() {
+        // for taking user input
+        Scanner scanner = new Scanner(System.in);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        AddressBook addressBook = new AddressBook();
+
     }
 }
